@@ -1,0 +1,102 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --white: #fafafb;
+    --purple:#9a67ea;
+    --blue-light:#04d4c3;
+    --blue-dark:#2a73c2;
+    --green: #2c7b90;
+}
+body {
+    background: linear-gradient(to bottom, var(--purple), var(--blue-light)); /*Degradado*/
+    height: 100vh;/*vh para ocupar todo el tamño de la pantalla, es responsive tambien*/
+    font-family: 'Prompt', sans-serif;
+}
+
+.container {    
+    width: 400px;
+    height: 600px;
+    margin: 0 auto; /*centrar los elementos*/
+    max-width: 80%;/*Hacerlo mas responsive*/
+}
+
+
+/*PERFIL*/
+
+.perfil h1 {
+    color: var(--white);
+}
+.perfil span {
+    color: var(--white);
+    letter-spacing: 1px;/*Espacio de las letras*/
+}
+
+#fecha {
+    color: var(--white);
+    margin: 50px 0 5px 0;
+}
+
+/*AGREGAR TAREA*/
+
+.agregar-tarea {
+    background-color: var(--white);
+    border-radius: 15px;
+    height: 70px;
+    display: flex; /*Para que los elementos se acomoden*/
+    align-items: center;
+    padding: 10px;
+    gap: 70px; /*Separar el input y el icono*/
+}
+.agregar-tarea input {
+    background-color: var(--white);
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    border: none;/*Quitar borde*/
+
+}
+.agregar-tarea i {
+   font-size: 50px; /*Siempre que tengas iconos tenes que utilizar font-size, el width no los detecta*/
+   color: var(--purple);
+}
+.agregar-tarea i:hover {
+    transform: scale(1.1); /*Zoom*/
+    cursor: pointer; /*Manito de cursor*/
+}
+.agregar-tarea input::placeholder {
+    font-size: 1.1rem; /*Letra de input*/
+    color: var(--purple);
+}
+
+/*SECCION TAREA*/
+
+.seccion-tarea h3 {
+    color: var(--white);
+    margin-bottom: 20px;
+}
+.seccion-tarea li {
+    display: flex; /*Alinear los elementos*/
+    background: linear-gradient(to bottom, var(--blue-dark) , var(--green)); /*Degradado*/
+    border-radius: 15px;
+    padding: 10px;/*mas anchos*/
+    align-items: center;
+    justify-content: space-between; /*separar los elementos entre si*/
+}
+.seccion-tarea i {
+    font-size: 25px;
+}
+
+.seccion-tarea i:hover {
+    color: var(--blue-light); /*Color del fondo pasando el cursor del icono*/
+    cursor: pointer;
+}
+.seccion-tarea > ul p { /*p esta dentro de ul, ul esta dentro de seccion-tarea*/
+    font-size: 25px;
+}
+.line-through {
+    text-decoration: line-through;
+    color: var(--blue-light);
+}
