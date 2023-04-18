@@ -96,7 +96,7 @@ body {
 .seccion-tarea > ul p { /*p esta dentro de ul, ul esta dentro de seccion-tarea*/
     font-size: 25px;
 }
-.line-through {
+/* .line-through {
     text-decoration: line-through;
     color: var(--blue-light);
-}
+} */
