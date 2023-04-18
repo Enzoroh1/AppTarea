@@ -49,6 +49,8 @@ body {
     align-items: center;
     padding: 10px;
     gap: 70px; /*Separar el input y el icono*/
+    margin: 40px 0;
+    
 }
 .agregar-tarea input {
     background-color: var(--white);
@@ -84,6 +86,8 @@ body {
     padding: 10px;/*mas anchos*/
     align-items: center;
     justify-content: space-between; /*separar los elementos entre si*/
+    margin: 5px 0; /*Espacio entre las listas*/
+    color: var(--white);
 }
 .seccion-tarea i {
     font-size: 25px;
@@ -96,7 +100,7 @@ body {
 .seccion-tarea > ul p { /*p esta dentro de ul, ul esta dentro de seccion-tarea*/
     font-size: 25px;
 }
-/* .line-through {
+.line-through {
     text-decoration: line-through;
     color: var(--blue-light);
-} */
+}
