@@ -8,14 +8,11 @@ const check = "fa-check-circle";
 const uncheck = "fa-circle";
 const lineThrough = "line-through";
 //
-let id = 0 //no podes declararla como const por que va a incrementar su valor
+let id
+//let id = 0  //no podes declararla como const por que va a incrementar su valor
 //
-const LIST = []//array para almacenar los datos en el navegador
-
-
-//SessionStorage = almacenamiento solo en la sesion
-//LocalStorage = almacenamiento incuso si se cierra
-
+let LIST
+//const LIST = []//array para almacenar los datos en el navegador
 
 //creacion de fecha
 const FECHA = new Date() //new Date() lo colocamos asi para llamar la funcion date que viene en el navegador
@@ -56,6 +53,7 @@ botonEnter.addEventListener("click", () => {
       eliminado:false
     }) 
   }
+  localStorage.setItem("TODO", JSON.stringify(LIST))
   input.value = "";//resetea el input
   id++
 });
@@ -74,6 +72,7 @@ document.addEventListener("keyup", function (event) {
         eliminado:false
       })
     }
+    localStorage.setItem("TODO", JSON.stringify(LIST))
     input.value = ""; // resetea el input / valor = "" (string vacio) se bora cualquier letra o palabra que quede en el input
     id++
   }
@@ -105,4 +104,25 @@ lista.addEventListener("click", function(event) {
   else if (elementData === "eliminado") {
     tareaEliminada(element)
   }
+  localStorage.setItem("TODO", JSON.stringify(LIST))
 })
+
+//SessionStorage = almacenamiento solo en la sesion
+//LocalStorage = almacenamiento incuso si se cierra
+// localStorage.setItem("TODO", JSON.stringify(LIST)) setItem lo voy a crear al elemento || stringify = convertir del lenguaje usado a JSON || parse = convertir de formato JSON al lenguaje utilizado
+// localStorage.getItem("TODO") getItem lo voy a mandar al elemento
+let data = localStorage.getItem("TODO")
+if(data) {
+  LIST = JSON.parse(data)
+  id = LIST.length
+  cargarLista(LIST)
+}else {
+  LIST = []
+  id = 0
+}
+
+function cargarLista(DATA) {
+  DATA.forEach(function(i) {
+    agregarTarea(i.nombre, i.id, i.realizado, i.eliminado)
+  })
+}
