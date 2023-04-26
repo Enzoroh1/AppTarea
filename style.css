@@ -3,12 +3,19 @@
     margin: 0;
     padding: 0;
 }
+/* :root {
+    --white: #fafafb;
+    --purple:#191919;
+    --blue-light:#f9004d;
+    --blue-dark:#2a73c2;
+    --green: #3e2c90;
+} */
 :root {
     --white: #fafafb;
-    --purple:#9a67ea;
-    --blue-light:#04d4c3;
+    --purple:#191919;
+    --blue-light:#f9004d;
     --blue-dark:#2a73c2;
-    --green: #2c7b90;
+    --green: #3e2c90;
 }
 body {
     background: linear-gradient(to bottom, var(--purple), var(--blue-light)); /*Degradado*/
